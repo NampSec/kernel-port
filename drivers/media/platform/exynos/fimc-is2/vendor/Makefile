@@ -16,6 +16,6 @@ obj-$(CONFIG_AF_HOST_CONTROL)	+= fimc-is-device-af.o
 obj-$(CONFIG_CAMERA_EEPROM_SUPPORT_REAR)	+= fimc-is-device-eeprom.o
 obj-$(CONFIG_CAMERA_EEPROM_SUPPORT_FRONT)	+= fimc-is-device-eeprom.o
 
-EXTRA_CFLAGS += -Idrivers/media/platform/exynos/fimc-is2
-EXTRA_CFLAGS += -Idrivers/media/platform/exynos/fimc-is2/include
-EXTRA_CFLAGS += -Idrivers/media/platform/exynos/fimc-is2/vendor
+EXTRA_CFLAGS += -I$(srctree)/drivers/media/platform/exynos/fimc-is2
+EXTRA_CFLAGS += -I$(srctree)/drivers/media/platform/exynos/fimc-is2/include
+EXTRA_CFLAGS += -I$(srctree)/drivers/media/platform/exynos/fimc-is2/vendor

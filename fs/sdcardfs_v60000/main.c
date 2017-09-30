@@ -43,6 +43,8 @@ enum {
 static const match_table_t sdcardfs_tokens = {
 	{Opt_low_uid, "low_uid=%u"},
 	{Opt_low_gid, "low_gid=%u"},
+	{Opt_low_uid, "fsuid=%u"},
+	{Opt_low_gid, "fsgid=%u"},
 	{Opt_gid, "gid=%u"},
 	{Opt_userid, "userid=%u"},
 	{Opt_debug, "debug"},
@@ -50,6 +52,7 @@ static const match_table_t sdcardfs_tokens = {
 	{Opt_reserved_mb, "reserved_mb=%u"},
 	{Opt_mask, "mask=%o"},
 	{Opt_multi_user, "multi_user"},
+	{Opt_multi_user, "multiuser"},
 	{Opt_label, "label=%s"},
 	{Opt_type, "type=%s"},
 	{Opt_err, NULL}
