@@ -494,6 +494,21 @@ static ssize_t show_bl_curve(struct device *device,
 }
 #endif
 
+static ssize_t store_rgb(struct device *device,
+			    struct device_attribute *attr,
+			    const char *buf, size_t count)
+{
+//	struct fb_info *fb_info = dev_get_drvdata(device);
+	return count;
+}
+
+static ssize_t show_rgb(struct device *device,
+			   struct device_attribute *attr, char *buf)
+{
+//	struct fb_info *fb_info = dev_get_drvdata(device);
+	return snprintf(buf, PAGE_SIZE, "0 0 0\n");
+}
+
 /* When cmap is added back in it should be a binary attribute
  * not a text one. Consideration should also be given to converting
  * fbdev to use configfs instead of sysfs */
@@ -513,6 +528,7 @@ static struct device_attribute device_attrs[] = {
 #ifdef CONFIG_FB_BACKLIGHT
 	__ATTR(bl_curve, S_IRUGO|S_IWUSR, show_bl_curve, store_bl_curve),
 #endif
+	__ATTR(rgb, S_IRUGO|S_IWUSR, show_rgb, store_rgb),
 };
 
 int fb_init_device(struct fb_info *fb_info)
